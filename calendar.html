@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>calendar</title>
+    <link rel="stylesheet" type="text/css" href="css.css">
+
+</head>
+<body>
+
+  <h1>2021</h1>
+<div class="calendar-wrapper" id='app'>
+  <div v-for='mes in meses'>
+    
+    <p style="text-align: center; color: blue;"> <b> {{ mes.mes_name }} </b> </p>
+
+    <ol class="calendar">
+
+        <li class="day-name">Sun</li>
+        <li class="day-name">Mon</li>
+        <li class="day-name">Tue</li>
+        <li class="day-name">Wed</li>
+        <li class="day-name">Thu</li>
+        <li class="day-name">Fri</li>
+        <li class="day-name">Sat</li>
+
+        <li v-for='dia in mes.cant_dias + mes.dia_inicial - 1'>
+            <span v-if='dia >= mes.dia_inicial' :style='colorDia(dia)'>{{ dia - mes.dia_inicial + 1 }}</span>
+        </li>
+        
+    </ol>
+  </div>
+</div>
+
+<script src="https://momentjs.com/downloads/moment.js"></script>
+<script src="https://unpkg.com/vue@next"></script>
+<script src='js.js'></script>
+
+</body>
+</html>
