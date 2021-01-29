@@ -7,6 +7,9 @@ const application = createApp({
     },
     methods:{
         colorDia(dia){
+            /**
+             * Comentario de ejemplo con DocBlock
+             */
             let color = dia/7 == Math.trunc(dia/7) ? "red" : "blue"
             return "color: " + color
         }
